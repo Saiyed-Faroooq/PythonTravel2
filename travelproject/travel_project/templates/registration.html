@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+{% load static %}
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Registration</title>
+    <link rel="stylesheet" type="text/css" href="'{% static 'css/style.css' %}'">
+</head>
+<body id="bgim" style="background-image: url('');">
+    <form action="register" method="post">
+        {% csrf_token %}
+        <div style="text-align: center; padding: 150px;">
+            <h2><ins>Registration Page</ins></h2>
+            <input type="text" name="username" placeholder="Enter your username"><br>
+            <input type="text" name="first_name" placeholder="Enter your first name"><br>
+            <input type="text" name="last_name" placeholder="Enter your last name"><br>
+            <input type="email" name="email" placeholder="Enter your email address"><br>
+            <input type="password" name="password" placeholder="Enter your password"><br>
+            <input type="password" name="password1" placeholder="Conform your password"><br>
+            <p style="padding: -10px;"></p>
+            <input type="submit" style="font-size:100%"><br>
+            {% for msg in messages %}
+            <h2 style="color: red">{{msg}}</h2>
+            {% endfor %}
+        </div>
+    </form>
+
+
+
+</body>
+</html>
